@@ -1,0 +1,76 @@
+.accueil {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../assets/textures/wood.png);
+  background-color: var(--background-wood-1);
+}
+
+.accueil-titre {
+  padding: 1rem;
+}
+
+.accueil-description {
+  padding: 0rem 5rem 1.5rem 5rem;
+}
+
+.para {
+  text-align: justify;
+  padding-bottom: 0.5rem;
+}
+
+.btn-game {
+  background-color: var(--background-button-1);
+  color: var(--color-button-1);
+  border: 3px solid var(--border-button-1);
+  width: max-content;
+  font-family: var(--font-1);
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 1rem 1.6rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: var(--transition-in);
+}
+
+.btn-game:hover {
+  background-color: var(--background-button-1-hover);
+  color: var(--color-button-1-hover);
+  border: 3px solid var(--border-button-1-hover);
+}
+
+.btn-game:active {
+  background-color: var(--background-button-1);
+  color: var(--border-button-1-active);
+  border: 3px solid var(--border-button-1-active);
+  transition: none;
+}
+
+/* ===== MEDIA QUERIES (DESKTOP) ===== */
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+}
+
+/* ===== MEDIA QUERIES (LAPTOP) ===== */
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+}
+
+/* ===== MEDIA QUERIES (TABLET) ===== */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .accueil-description {
+    padding: 0rem 3.5rem 1.1rem 3.5rem;
+  }
+}
+
+/* ===== MEDIA QUERIES (MOBILE) ===== */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .accueil-description {
+    padding: 0rem 2.5rem 1.1rem 2.5rem;
+  }
+}
