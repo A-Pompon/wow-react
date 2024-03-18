@@ -44,6 +44,13 @@
     text-align: center;
 }
 
+.list-friends-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
 
 /* ===== MEDIA QUERIES (DESKTOP) ===== */
 

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import "../../styles/userDetails.css";
-// import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {USERS} from "./_mock-users";
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 const UserDetails = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const {userId} = useParams();
     // eslint-disable-next-line
     const [player, setPlayer] = useState(USERS[userId]);
@@ -19,9 +19,9 @@ const UserDetails = () => {
         // eslint-disable-next-line
     }, []);
 
-    // const goToUserDetails = (user) => {
-    //     navigate(`/classement`);
-    // };
+    const handleGoBack = () => {
+        navigate(-1);
+    };
 
     return (
         <section className="container">
@@ -51,8 +51,8 @@ const UserDetails = () => {
                             </p>
                         </div>
                         <div className="detail-action">
-                            <Link to={'/classement'} className="btn primary">Retour</Link>
-                            {/*<button onClick={goToUserDetails} className="btn primary">Retour</button>*/}
+                            {/*<Link to={'/classement'} className="btn primary">Retour</Link>*/}
+                            <button onClick={handleGoBack} className="btn primary">Retour</button>
                             {/* ===== REVOIR CONDITION POUR LE BUTTON AJOUT AMI/DELETE AMI && POUR LA REDIRECTION VERS CLASSEMENT OU FRIENDS =====*/}
                             {player.id !== userId && (
                                 <div className="button-friend">

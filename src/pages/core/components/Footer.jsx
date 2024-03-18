@@ -1,7 +1,8 @@
 import "../../../styles/footer.css";
 import Logo from "../../../assets/logo/world-of-pangolin.png";
 import {Link, NavLink} from 'react-router-dom';
-// import { LinkOutlined, LinkedinOutlined, GithubOutlined, GitlabOutlined } from '@ant-design/icons';
+import {IoLogoGitlab, IoLogoGithub, IoGlobeOutline,} from "react-icons/io5";
+import {IoLogoLinkedin} from "react-icons/io";
 
 const Footer = () => {
     return (
@@ -23,13 +24,13 @@ const Footer = () => {
                 </nav>
                 <div className="social-link">
                     <a title="CV Arnaud POMPONIO" href="https://pomponio.org" target="_blank"
-                       rel="noopener noreferrer">CV</a>
+                       rel="noopener noreferrer"><IoGlobeOutline/></a>
                     <a title="Profil Linkedin" href="https://www.linkedin.com/in/pomponio-arnaud/" target="_blank"
-                       rel="noopener noreferrer">Linkedin</a>
+                       rel="noopener noreferrer"><IoLogoLinkedin/></a>
                     <a title="Lien Github" href="https://github.com/A-Pompon" target="_blank"
-                       rel="noopener noreferrer">GitHub</a>
+                       rel="noopener noreferrer"><IoLogoGithub/></a>
                     <a title="Lien Gitlab" href="https://gitlab.com/PomponArnaud" target="_blank"
-                       rel="noopener noreferrer">GitLbab</a>
+                       rel="noopener noreferrer"><IoLogoGitlab/></a>
                 </div>
                 <p className="copy">&copy; Arnaud POMPONIO 2022.</p>
             </div>

@@ -7,6 +7,7 @@ import Classement from "./pages/users/Classement";
 import UserDetails from "./pages/users/UserDetails";
 import ScrollToTop from "./helpers/ScrollToTop";
 import Friends from "./pages/users/Friends";
+import Profil from "./pages/users/Profil";
 
 const App = () => {
     return (
@@ -18,8 +19,9 @@ const App = () => {
                 <Route path="/classement" element={<Classement/>}/>
                 <Route path="/classement/user/:userId" element={<UserDetails/>}/>
                 <Route path="/friends" element={<Friends/>}/>
+                {/* ===== GERER LA REDIRECTION DU RETOUR VERS /friends et non /clasement ====== */}
                 <Route path="/friends/friend/:userId" element={<UserDetails/>}/>
-                {/*<Route path={"/user/:userId"} element={<UserDetails/>}/>*/}
+                <Route path="/profil" element={<Profil/>}/>
                 <Route path="/*" element={<NotFound/>}/>
             </Routes>
             <Footer/>

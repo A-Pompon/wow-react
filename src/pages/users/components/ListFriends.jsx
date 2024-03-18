@@ -2,6 +2,7 @@ import "../../../styles/listFriends.css";
 import {USERS} from "../_mock-users"
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import {FaTrashArrowUp} from "react-icons/fa6";
 
 const ListFriends = () => {
     const [friendsList, setFriendsList] = useState([]);
@@ -30,11 +31,12 @@ const ListFriends = () => {
                         <p className="list-name">
                             Nom : {friend.name ? friend.name : "BUGGY"}
                         </p>
+                        {/* ===== REVOIR CLASSE CSS ====== */}
                         <p className="list-role">
-                            Rôle : {friend.role ? friend.role.toUpperCase() : "BUGGY"}
+                            Score : {friend.score ? friend.score : "BUGGY"}
                         </p>
                     </div>
-                    <div className="detail-action">
+                    <div className="list-friends-action">
                         <button
                             // onClick={() => deleteToFriend(friend._id)}  // Assurez-vous de définir deleteToFriend
                             className="btn secondary laptop"
@@ -43,9 +45,9 @@ const ListFriends = () => {
                         </button>
                         <button
                             // onClick={() => deleteToFriend(friend._id)}  // Assurez-vous de définir deleteToFriend
-                            className="btn secondary mobile"
+                            className="btn mobile"
                         >
-                            <span className="anticon anticon-delete" role="img" aria-label="delete">DELETE</span>
+                            <FaTrashArrowUp/>
                         </button>
                     </div>
                 </Link>
