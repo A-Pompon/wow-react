@@ -2,6 +2,7 @@ import "../../../styles/listFriends.css";
 import {USERS} from "../_mock-users"
 import {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
+import getImageRace from "../../../helpers/getImageRace";
 import {FaTrashArrowUp} from "react-icons/fa6";
 
 const ListFriends = () => {
@@ -11,19 +12,25 @@ const ListFriends = () => {
         setFriendsList(USERS)
     }, []);
 
+    const handleActionListFriend = (event) => {
+        event.preventDefault();
+    }
+
     return (
         <div className="list">
             {friendsList.map(friend => (
                 <Link
                     to={`friend/${friend.id}`}
-                    key={friend.id}  // Assurez-vous d'utiliser une clé unique pour chaque élément dans le tableau
+                    key={friend.id}
                     className="list-item"
-                    style={{border: 'var(--color-1)'}}  // Assurez-vous de définir commonBorderCard
+                    style={{border: 'var(--color-1)'}}
                 >
                     <div className="list-img">
                         <img
                             className="img-role"
-                            src={require(`../../../assets/roles/${friend.role.toLowerCase()}.png`)}
+                            // VU SUR https://stackoverflow.com/questions/70818392/images-not-showing-in-react
+                            // src={require(`../../../assets/roles/${friend.race.toLowerCase()}.png`)}
+                            src={getImageRace(friend.race.toLowerCase())}
                             alt="Rôle"
                         />
                     </div>
@@ -40,12 +47,14 @@ const ListFriends = () => {
                         <button
                             // onClick={() => deleteToFriend(friend._id)}  // Assurez-vous de définir deleteToFriend
                             className="btn secondary laptop"
+                            onClick={handleActionListFriend}
                         >
                             Supprimer des amis
                         </button>
                         <button
                             // onClick={() => deleteToFriend(friend._id)}  // Assurez-vous de définir deleteToFriend
                             className="btn mobile"
+                            onClick={handleActionListFriend}
                         >
                             <FaTrashArrowUp/>
                         </button>

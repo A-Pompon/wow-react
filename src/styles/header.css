@@ -63,7 +63,7 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
-.container-nav-mobile a.active-mobile {
+.container-nav-mobile a.active {
     background: var(--background-button-2);
     color: var(--color-button-2);
 }

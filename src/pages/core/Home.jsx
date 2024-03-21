@@ -1,6 +1,12 @@
 import "../../styles/home.css";
+import {useNavigate} from "react-router-dom";
 
 const Home = () => {
+    const navigate = useNavigate();
+
+    const goGame = () => {
+        navigate('/donjon');
+    };
     return (
         <section className="container">
             <article className="accueil">
@@ -9,8 +15,8 @@ const Home = () => {
                     <p className="para">
                         Bienvenue dans l'univers palpitant de World of Pangolins !
                         Préparez-vous à affronter le redoutable Roi Fourmi et ses acolytes
-                        dans une aventure épique où la victoire vous réserve des points et
-                        l'opportunité d'atteindre des sommets de score inégalés.
+                        dans une aventure épique où la victoire vous donnera
+                        l'opportunité d'atteindre le sommet du classement général.
                     </p>
                     <p className="para">
                         Embrassez l'excitation de <i>Lance, arc et bouclier</i>, un jeu
@@ -18,13 +24,14 @@ const Home = () => {
                         ruse, car chaque coup a son adversaire naturel : les lances défient
                         les boucliers, les boucliers résistent aux arcs, et les arcs
                         triomphent des lances. C'est un jeu de tactique où chaque décision
-                        compte, et la victoire repose sur vos épaules agiles.
+                        compte. La victoire repose sur vos choix.
                     </p>
                     <p className="para">
                         Explorez trois donjons captivants, chacun offrant son lot de défis.
                         Choisissez judicieusement :
                     </p>
                     <p className="para">
+                        {/* ===== REVOIR NOMBRE DE POINTS =====*/}
                         Donjon 1 +/- 3 points.
                         <br/> Donjon 2 +/- 5 points.
                         <br/>
@@ -40,7 +47,7 @@ const Home = () => {
                         légende dans World of Pangolins. Que l'aventure commence !
                     </p>
                 </div>
-                <button /*onClick={goGame}*/ className="btn-game">JOUER</button>
+                <button onClick={goGame} className="btn-game">JOUER</button>
             </article>
         </section>
     );

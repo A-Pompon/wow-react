@@ -3,6 +3,7 @@ import "../../styles/userDetails.css";
 import {useNavigate} from "react-router-dom";
 import {USERS} from "./_mock-users";
 import {useParams} from "react-router-dom";
+import getImageRace from "../../helpers/getImageRace";
 
 const UserDetails = () => {
     const navigate = useNavigate();
@@ -13,9 +14,7 @@ const UserDetails = () => {
     const [isFriend, setIsFriend] = useState(false);
 
     useEffect(() => {
-        console.log("USERS[userId]", USERS[userId])
         // setPlayer(USERS[userId])
-        console.log("player", player)
         // eslint-disable-next-line
     }, []);
 
@@ -30,7 +29,7 @@ const UserDetails = () => {
                     <div className="detail-container">
                         <div className="detail-img">
                             <img className="img-role"
-                                 src={require(`../../assets/roles/${player.role.toLowerCase()}.png`)}
+                                 src={getImageRace(player.race.toLowerCase())}
                                  alt="Rôle"/>
                         </div>
                         <div className="detail-info">
@@ -39,7 +38,7 @@ const UserDetails = () => {
                             </p>
                             <p className="detail-role">
                                 Rôle
-                                : {player.id === null ? "BUGGY" : player.role.toUpperCase()}
+                                : {player.id === null ? "BUGGY" : player.race.toUpperCase()}
                             </p>
                         </div>
                         <div className="detail-score">

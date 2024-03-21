@@ -2,7 +2,7 @@ import "../../../styles/listUsers.css";
 import {useEffect, useState} from "react";
 import {Link} from 'react-router-dom';
 import {USERS} from "../_mock-users"
-// import SORCIER from "../../assets/roles/sorcier.png";
+import getImageRace from "../../../helpers/getImageRace";
 
 const ListUsers = () => {
     // const navigate = useNavigate();
@@ -11,14 +11,6 @@ const ListUsers = () => {
     useEffect(() => {
         setUserClassement(USERS)
     }, []);
-
-    // A REVOIR
-    // const getUserImage = (user) => {
-    //     const path = user.id === null
-    //         ? 'sorcier.png'
-    //         : `${user.role.toLowerCase()}.png`;
-    //     return `require('../../assets/roles/${path}')`;
-    // };
 
     // const goToUserDetails = (user) => {
     //     navigate(`/user/${user.id}`);
@@ -38,10 +30,9 @@ const ListUsers = () => {
                     <div className="list-img">
                         <img
                             className="img-role"
-                            // src={getUserImage(user)} // A REVOIR
-                            // src={SORCIER}
                             // VU SUR https://stackoverflow.com/questions/70818392/images-not-showing-in-react
-                            src={require(`../../../assets/roles/${user.role.toLowerCase()}.png`)}
+                            // src={require(`../../../assets/roles/${user.race.toLowerCase()}.png`)}
+                            src={getImageRace(user.race.toLowerCase())}
                             alt="Rôle"
                         />
                     </div>
@@ -50,8 +41,8 @@ const ListUsers = () => {
                             Nom : {user.id === null ? "BUGGY" : user.name}
                         </p>
                         <p className="list-role">
-                            Rôle
-                            : {user.id === null ? "BUGGY" : user.role.toUpperCase()}
+                            Race
+                            : {user.id === null ? "BUGGY" : user.race.toUpperCase()}
                         </p>
                     </div>
                     <div className="list-score">

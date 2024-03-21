@@ -18,9 +18,7 @@ const Header = () => {
                     <ul className="header-nav">
                         <li><NavLink to="/" className="header-link">Accueil</NavLink></li>
                         <li><NavLink to="/donjon" className="header-link">Donjon</NavLink></li>
-                        <li><NavLink to="/classement" className="header-link"
-                        >Classement</NavLink>
-                        </li>
+                        <li><NavLink to="/classement" className="header-link">Classement</NavLink></li>
                         <li><NavLink to="/friends" className="header-link">Amis</NavLink></li>
                         <li><NavLink to="/profil" className="header-link">Profil</NavLink></li>
                     </ul>
@@ -28,11 +26,11 @@ const Header = () => {
 
                 <nav className="container-nav-mobile">
                     <ul className="header-nav">
-                        <li><NavLink to="/" className="header-link"><IoHome/></NavLink></li>
-                        <li><NavLink to="/donjon" className="header-link"><FaDungeon/></NavLink></li>
-                        <li><NavLink to="/classement" className="header-link"><FaRankingStar/></NavLink></li>
-                        <li><NavLink to="/friends" className="header-link"><FaUserFriends/></NavLink></li>
-                        <li><NavLink to="/profil" className="header-link"><FaUserCircle/></NavLink></li>
+                        <li><NavLink to="/" className="mobile"><IoHome/></NavLink></li>
+                        <li><NavLink to="/donjon" className="mobile"><FaDungeon/></NavLink></li>
+                        <li><NavLink to="/classement" className="mobile"><FaRankingStar/></NavLink></li>
+                        <li><NavLink to="/friends" className="mobile"><FaUserFriends/></NavLink></li>
+                        <li><NavLink to="/profil" className="mobile"><FaUserCircle/></NavLink></li>
                     </ul>
                 </nav>
             </div>

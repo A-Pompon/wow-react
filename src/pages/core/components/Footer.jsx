@@ -32,7 +32,7 @@ const Footer = () => {
                     <a title="Lien Gitlab" href="https://gitlab.com/PomponArnaud" target="_blank"
                        rel="noopener noreferrer"><IoLogoGitlab/></a>
                 </div>
-                <p className="copy">&copy; Arnaud POMPONIO 2022.</p>
+                <p className="copy">&copy; Arnaud POMPONIO 2024.</p>
             </div>
         </footer>
     );
