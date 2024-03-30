@@ -1,0 +1,244 @@
+.register-container {
+    width: 100%;
+    min-height: 67vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+    padding: 1rem;
+}
+
+.register-logo {
+    width: 150px;
+}
+
+.register-logo-race {
+    width: 150px;
+    border-radius: 30%;
+}
+
+.hello-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+
+.form-register {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.3rem;
+}
+
+.form-group-register-error {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /*justify-content: ;*/
+    align-items: center;
+}
+
+.form-group-register {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+label {
+    width: 50%;
+}
+
+.form-control {
+    width: 90%;
+    height: 1.8rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+input {
+    background-color: var(--color-1);
+    border-color: var(--border-button-2);
+    border-radius: 8px;
+    text-align: start;
+    text-indent: 8px;
+}
+
+.radio-register {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.radio-label {
+    padding-left: 0.4rem;
+}
+
+input[type=radio] {
+    content: '';
+    border-radius: 50%;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+input[type=radio]:checked {
+    accent-color: var(--color-1);
+}
+
+.icon-register {
+    width: 20px;
+    height: 100%;
+    color: var(--color-1);
+    cursor: pointer;
+}
+
+.icon-register:hover {
+    color: var(--white);
+}
+
+.icon-register:active {
+    color: var(--link-active);
+}
+
+.icon-indication {
+    width: 50px;
+    height: 100%;
+    color: var(--color-3);
+    cursor: pointer;
+}
+
+.icon-indication:hover {
+    color: var(--white);
+}
+
+.icon-indication:active {
+    color: var(--link-active);
+}
+
+.error-text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-text {
+    text-align: center;
+    font-size: .6rem;
+    color: red;
+}
+
+.checkbox-register {
+    width: 100%;
+}
+
+.form-group-register-captcha {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.form-group-register-indication {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.indication-register {
+    color: var(--color-3);
+    font-size: .7rem;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-button {
+    /*padding-bottom: 1rem;*/
+}
+
+.login {
+    text-align: center;
+}
+
+.login-link {
+    color: var(--color-1);
+    transition: var(--transition-in);
+    font-size: 1rem;
+}
+
+.login-link:hover {
+    color: var(--white);
+    text-decoration: underline var(--white);
+}
+
+.login-link:active {
+    color: var(--link-active);
+    text-decoration: underline var(--link-active);
+    transition: none;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+@media screen and (max-width: 1024px) {
+    .form-group-register {
+        width: 60%;
+    }
+}
+
+/* ===== MEDIA QUERIES (SMALL DEVICES) ===== */
+
+@media screen and (max-width: 600px) {
+    .form-group-register {
+        width: 80%;
+    }
+}
+
+/* ===== MEDIA QUERIES (VERY SMALL DEVICES) ===== */
+
+@media screen and (max-width: 415px) {
+    .form-group-register {
+        width: 100%;
+    }
+}
+
+/* ===== MEDIA QUERIES (VERY SMALL DEVICES) ===== */
+
+@media screen and (max-width: 350px) {
+
+}
+
+/* ===== MEDIA QUERIES (VERY SMALL DEVICES) ===== */
+
+@media screen and (max-width: 300px) {
+
+}

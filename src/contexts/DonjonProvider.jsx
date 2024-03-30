@@ -1,6 +1,7 @@
 import {createContext, useEffect, useState} from "react";
-import {USERS} from "../pages/users/_mock-users";
+import {USERS} from "../pages/User/users/_mock-users";
 import {useNavigate} from "react-router-dom";
+import {gamesService, scoresService} from "../_services";
 
 const DonjonContext = createContext(null);
 
@@ -10,15 +11,17 @@ const DonjonProvider = ({children}) => {
     const [opponent, setOpponent] = useState('');
     const [opponentImg, setOpponentImg] = useState('');
     const [winOrLoos, setWinOrLoos] = useState('');
+
     // RAJOUTER POUR AFFICHER SCORE DANS ENDGAME ?
-    const [scorePlayerFinal, setScorePlayerFinal] = useState(0);
-    const [scoreIaFinal, setScoreIaFinal] = useState(0);
-    const [scoreUser, setScoreUser] = useState(undefined);
+    // const [scorePlayerFinal, setScorePlayerFinal] = useState(0);
+    // const [scoreIaFinal, setScoreIaFinal] = useState(0);
 
     // Initialisation des données
     const [scorePlayer, setScorePlayer] = useState(0);
     const [scoreIa, setScoreIa] = useState(0);
     const [pvPlayer, setPvPlayer] = useState(undefined); // SCORE PLAYER LVL 1 QU'ON PEUT MODIFIER
+
+    const [gameId, setGameId] = useState();
 
     const navigate = useNavigate();
 
@@ -26,16 +29,21 @@ const DonjonProvider = ({children}) => {
         navigate(`end`);
     };
 
-    useEffect(() => {
-        // Effet pour charger le profil du joueur
-        setScoreUser(USERS[0]);
-    }, [scoreUser]);
+    // useEffect(() => {
+    //     // Effet pour charger le profil du joueur
+    //     setScoreUser(USERS[0]);
+    // }, [scoreUser]);
 
     useEffect(() => {
-        console.log("scoreToReach", scoreToReach);
-        console.log("pvPlayer", pvPlayer);
-        console.log("winOrLoos", winOrLoos);
-    }, [scoreToReach, pvPlayer]);
+        gamesService.getGameIdByName()
+            .then((response) => {
+                console.log("gameId", response.data._id);
+                setGameId(response.data._id);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     useEffect(() => {
         if (scorePlayer === scoreToReach && scoreToReach > 0) {
@@ -45,24 +53,105 @@ const DonjonProvider = ({children}) => {
         }
     }, [scorePlayer, scoreToReach, pvPlayer, scoreIa]);
 
+    const addVictory = (id) => {
+        scoresService.addVictory(id)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    const addDefeat = (id) => {
+        scoresService.addDefeat(id)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    const winLevel1 = (id) => {
+        scoresService.donjonLevelOneW(id)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    const winLevel2 = (id) => {
+        scoresService.donjonLevelTwoW(id)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    const winLevel3 = (id) => {
+        scoresService.donjonLevelThreeW(id)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    const looseLevel1 = (id) => {
+        scoresService.donjonLevelOneL(id)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    const looseLevel2 = (id) => {
+        scoresService.donjonLevelTwoL(id)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
+    const looseLevel3 = (id) => {
+        scoresService.donjonLevelThreeL(id)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+
     const handleWinGame = (scoreToReach) => {
         let scoreChange = 0;
         let winMessage = '';
         if (scoreToReach === 3) {
             scoreChange = 3;
             winMessage = `GAGNE !! Félicitation vous avez vaincu le ${opponent} ! Vous avez gagné ${scoreToReach} points`;
-            // donjonService.donjonLevelOneW().subscribe();
+            winLevel1(gameId);
         } else if (scoreToReach === 5) {
             scoreChange = 5;
             winMessage = `GAGNE !! Félicitation vous avez vaincu le ${opponent} ! Vous avez gagné ${scoreToReach} points`;
-            // donjonService.donjonLevelTwoW().subscribe();
+            winLevel2(gameId);
         } else if (scoreToReach === 7) {
             scoreChange = 7;
             winMessage = `GAGNE !! Félicitation vous avez vaincu le ${opponent} ! Vous avez gagné ${scoreToReach} points`;
-            // donjonService.donjonLevelThreeW().subscribe();
+            winLevel3(gameId);
         }
         // donjonService.winGame().subscribe();
         console.log(`Envoie de ${scoreChange} points`);
+        addVictory(gameId);
         setWinOrLoos(winMessage);
         goToEndGame();
     };
@@ -73,18 +162,19 @@ const DonjonProvider = ({children}) => {
         if (scoreToReach === 3) {
             scoreChange = 3;
             looseMessage = `PERDU... Vous ferez mieux la prochaine fois... Vous avez perdu ${scoreToReach} points.`;
-            // donjonService.donjonLevelOneL().subscribe();
+            looseLevel1(gameId);
         } else if (scoreToReach === 5) {
             scoreChange = 5;
             looseMessage = `PERDU... Vous manquez d'exercice.. ? Vous avez perdu ${scoreToReach} points.`;
-            // donjonService.donjonLevelTwoL().subscribe();
+            looseLevel2(gameId);
         } else if (scoreToReach === 7) {
             scoreChange = 7;
             looseMessage = `PERDU... Il est trop fort... Vous avez perdu ${scoreToReach} points.`;
-            // donjonService.donjonLevelThreeL().subscribe();
+            looseLevel3(gameId);
         }
         // donjonService.looseGame().subscribe();
         console.log(`Soustraction de ${scoreChange} points`);
+        addDefeat(gameId);
         setWinOrLoos(looseMessage);
         goToEndGame();
     };
@@ -121,7 +211,6 @@ const DonjonProvider = ({children}) => {
     return (
         <DonjonContext.Provider
             value={{
-                scoreUser,
                 scoreToReach,
                 opponent,
                 opponentImg,

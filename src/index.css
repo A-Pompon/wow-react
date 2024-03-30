@@ -108,6 +108,14 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-size: 2.3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
 h4 {
     font-size: 2.5rem;
 }
@@ -154,6 +162,20 @@ a:active {
     background-color: var(--background-button-2);
     color: var(--color-button-2);
     border: 3px solid var(--border-button-2);
+}
+
+.btn:disabled {
+    background-color: rgba(241, 186, 134, 0.3);
+    color: var(--color-button-2);
+    border: 3px solid var(--border-button-2);
+    cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+    background-color: rgba(241, 186, 134, 0.3);
+    color: var(--color-button-2);
+    border: 3px solid var(--border-button-2);
+    cursor: not-allowed;
 }
 
 .mobile {
@@ -207,6 +229,7 @@ a:active {
 @media screen and (min-width: 320px) and (max-width: 480px) {
     .container {
         width: var(--container-width-sm);
+        min-height: 66vh;
     }
 
     h1 {
@@ -231,6 +254,7 @@ a:active {
 @media screen and (min-width: 481px) and (max-width: 768px) {
     .container {
         width: var(--container-width-md);
+        min-height: 66vh;
     }
 
     h1 {
@@ -255,6 +279,7 @@ a:active {
 @media screen and (min-width: 769px) and (max-width: 1023px) {
     .container {
         width: var(--container-width-lg);
+        min-height: 66vh;
     }
 
     h1 {

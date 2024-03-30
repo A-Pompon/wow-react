@@ -1,11 +1,11 @@
-.list {
+.list-classement {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.list-item {
+.list-item-classement {
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -56,7 +56,7 @@
 /* ===== MEDIA QUERIES (DESKTOP) ===== */
 
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
-    .list-item {
+    .list-item-classement {
         width: 60%;
     }
 }
@@ -64,7 +64,7 @@
 /* ===== MEDIA QUERIES (LAPTOP) ===== */
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {
-    .list-item {
+    .list-item-classement {
         width: 75%;
     }
 }
@@ -72,7 +72,7 @@
 /* ===== MEDIA QUERIES (TABLET) ===== */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    .list-item {
+    .list-item-classement {
         width: 80%;
     }
 
@@ -92,7 +92,7 @@
 /* ===== MEDIA QUERIES (MOBILE) ===== */
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    .list-item {
+    .list-item-classement {
         width: 92%;
     }
 
