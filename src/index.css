@@ -1,95 +1,95 @@
 /* FONT  */
 
 @font-face {
-    font-family: "itim";
-    src: url(./assets/fonts/Itim-Regular.ttf);
+  font-family: "itim";
+  src: url(./assets/fonts/Itim-Regular.ttf);
 }
 
 /* VARIABLES TEMPLATES COLORS */
 
 :root {
-    --font-1: "itim", Verdana, sans-serif; /* ===== ===== Justifier la présence des autres polices dites "standard" ===== ===== */
+  --font-1: "itim", Verdana, sans-serif; /* ===== ===== Justifier la présence des autres polices dites "standard" ===== ===== */
 
-    --color-1: rgba(241, 185, 134, 1);
-    --color-2: rgba(241, 186, 134, 0.3);
-    --color-3: rgb(159, 103, 51);
+  --color-1: rgba(241, 185, 134, 1);
+  --color-2: rgba(241, 186, 134, 0.3);
+  --color-3: rgb(159, 103, 51);
 
-    --background-wood-1: rgba(111, 66, 26, 1);
-    --background-wood-2: rgba(51, 26, 0, 1);
-    --background-wood-2-horizontal: rgb(51, 26, 0, 1);
-    --background-brick: rgb(0, 0, 0, 1);
+  --background-wood-1: rgba(111, 66, 26, 1);
+  --background-wood-2: rgba(51, 26, 0, 1);
+  --background-wood-2-horizontal: rgb(51, 26, 0, 1);
+  --background-brick: rgb(0, 0, 0, 1);
 
-    --color-button-1: rgba(241, 185, 134, 1);
-    --color-button-1-hover: rgb(255, 255, 255);
-    --background-button-1: rgba(144, 103, 58, 0.35);
-    --background-button-1-hover: rgba(144, 103, 58, 0.35);
-    --border-button-1: rgba(241, 185, 134, 1);
-    --border-button-1-hover: rgb(255, 255, 255);
-    --border-button-1-active: rgb(255, 102, 0);
+  --color-button-1: rgba(241, 185, 134, 1);
+  --color-button-1-hover: rgb(255, 255, 255);
+  --background-button-1: rgba(144, 103, 58, 0.35);
+  --background-button-1-hover: rgba(144, 103, 58, 0.35);
+  --border-button-1: rgba(241, 185, 134, 1);
+  --border-button-1-hover: rgb(255, 255, 255);
+  --border-button-1-active: rgb(255, 102, 0);
 
-    --color-button-2: rgba(28, 14, 0, 1);
-    --color-button-2-hover: rgb(255, 255, 255);
-    --background-button-2: rgba(241, 186, 134, 0.8);
-    --background-button-2-hover: rgba(241, 186, 134, 0.7);
-    --border-button-2: rgba(156, 80, 0, 1);
-    --border-button-2-hover: rgb(255, 255, 255);
-    --border-button-2-active: rgb(255, 102, 0);
+  --color-button-2: rgba(28, 14, 0, 1);
+  --color-button-2-hover: rgb(255, 255, 255);
+  --background-button-2: rgba(241, 186, 134, 0.8);
+  --background-button-2-hover: rgba(241, 186, 134, 0.7);
+  --border-button-2: rgba(156, 80, 0, 1);
+  --border-button-2-hover: rgb(255, 255, 255);
+  --border-button-2-active: rgb(255, 102, 0);
 
-    --link-active: rgb(255, 102, 0);
+  --link-active: rgb(255, 102, 0);
 
-    --white: rgb(255, 255, 255, 1);
-    --black: rgb(0, 0, 0, 1);
-    --black-2: rgba(0, 0, 0, 0.5);
+  --white: rgb(255, 255, 255, 1);
+  --black: rgb(0, 0, 0, 1);
+  --black-2: rgba(0, 0, 0, 0.5);
 
-    --transition-in: all 300ms ease-in;
-    --transition-out: all 400ms ease-out;
-    --transition-out-long: all 1000ms ease-out;
+  --transition-in: all 300ms ease-in;
+  --transition-out: all 400ms ease-out;
+  --transition-out-long: all 1000ms ease-out;
 
-    --container-width-lg: 75%;
-    --container-width-md: 86%;
-    --container-width-sm: 92%;
+  --container-width-lg: 75%;
+  --container-width-md: 86%;
+  --container-width-sm: 92%;
 }
 
 /* RESET */
 
 /* ===== ===== Justifier le "reset" ===== ===== */
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
 
 /* GLOBAL CSS */
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: var(--font-1);
-    color: var(--color-1);
-    line-height: 1.5;
-    background-image: url(./assets/textures/brick.png);
-    background-color: var(--black);
+  font-family: var(--font-1);
+  color: var(--color-1);
+  line-height: 1.5;
+  background-image: url(./assets/textures/brick.png);
+  background-color: var(--black);
 }
 
 .container {
-    width: var(--container-width-lg);
-    margin: 0 auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  width: var(--container-width-lg);
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .title {
-    width: fit-content;
-    text-align: center;
-    background-image: url(../src/assets/textures/wood.png);
-    background-color: var(--background-wood-1);
-    padding: 0.8rem 3rem 0.2rem 3rem;
+  width: fit-content;
+  text-align: center;
+  background-image: url(../src/assets/textures/wood.png);
+  background-color: var(--background-wood-1);
+  padding: 0.8rem 3rem 0.2rem 3rem;
 }
 
 h1,
@@ -99,202 +99,202 @@ h4,
 h5,
 h6,
 p {
-    font-weight: 500;
-    color: var(--color-1);
+  font-weight: 500;
+  color: var(--color-1);
 }
 
 h1 {
-    font-size: 2.5rem;
-    text-align: center;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 h2 {
-    font-size: 2.3rem;
+  font-size: 2.3rem;
 }
 
 h3 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h4 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 p {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
 
 a {
-    color: var(--color-1);
-    transition: var(--transition-in);
-    font-size: 1.8rem;
+  color: var(--color-1);
+  transition: var(--transition-in);
+  font-size: 1.8rem;
 }
 
 a:hover {
-    color: var(--white);
-    text-decoration: underline var(--white);
+  color: var(--white);
+  text-decoration: underline var(--white);
 }
 
 a:active {
-    color: var(--link-active);
-    text-decoration: underline var(--link-active);
-    transition: none;
+  color: var(--link-active);
+  text-decoration: underline var(--link-active);
+  transition: none;
 }
 
 .btn {
-    width: max-content;
-    font-family: var(--font-1);
-    font-size: 1.1rem;
-    font-weight: 500;
-    padding: 0.75rem 1.2rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    transition: var(--transition-in);
+  width: max-content;
+  font-family: var(--font-1);
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: var(--transition-in);
 }
 
 .primary {
-    background-color: var(--background-button-1);
-    color: var(--color-button-1);
-    border: 3px solid var(--border-button-1);
+  background-color: var(--background-button-1);
+  color: var(--color-button-1);
+  border: 3px solid var(--border-button-1);
 }
 
 .secondary {
-    background-color: var(--background-button-2);
-    color: var(--color-button-2);
-    border: 3px solid var(--border-button-2);
+  background-color: var(--background-button-2);
+  color: var(--color-button-2);
+  border: 3px solid var(--border-button-2);
 }
 
 .btn:disabled {
-    background-color: rgba(241, 186, 134, 0.3);
-    color: var(--color-button-2);
-    border: 3px solid var(--border-button-2);
-    cursor: not-allowed;
+  background-color: rgba(241, 186, 134, 0.3);
+  color: var(--color-button-2);
+  border: 3px solid var(--border-button-2);
+  cursor: not-allowed;
 }
 
 .btn:disabled:hover {
-    background-color: rgba(241, 186, 134, 0.3);
-    color: var(--color-button-2);
-    border: 3px solid var(--border-button-2);
-    cursor: not-allowed;
+  background-color: rgba(241, 186, 134, 0.3);
+  color: var(--color-button-2);
+  border: 3px solid var(--border-button-2);
+  cursor: not-allowed;
 }
 
 .mobile {
-    border: none;
-    background-color: transparent;
-    color: var(--color-button-1);
-    padding: 0;
-    /*padding: 0.75rem 1.2rem;*/
-    /*border-radius: 0.4rem;*/
-    /*cursor: pointer;*/
-    /*transition: var(--transition-in);*/
+  border: none;
+  background-color: transparent;
+  color: var(--color-button-1);
+  padding: 0;
+  /*padding: 0.75rem 1.2rem;*/
+  /*border-radius: 0.4rem;*/
+  /*cursor: pointer;*/
+  /*transition: var(--transition-in);*/
 }
 
 .primary:hover {
-    background-color: var(--background-button-1-hover);
-    color: var(--color-button-1-hover);
-    border: 3px solid var(--border-button-1-hover);
+  background-color: var(--background-button-1-hover);
+  color: var(--color-button-1-hover);
+  border: 3px solid var(--border-button-1-hover);
 }
 
 .secondary:hover {
-    background-color: var(--background-button-2-hover);
-    color: var(--color-button-2-hover);
-    border: 3px solid var(--border-button-2-hover);
+  background-color: var(--background-button-2-hover);
+  color: var(--color-button-2-hover);
+  border: 3px solid var(--border-button-2-hover);
 }
 
 .mobile:hover {
-    color: var(--color-button-1-hover);
+  color: var(--color-button-1-hover);
 }
 
 .primary:active {
-    background-color: var(--background-button-1);
-    color: var(--border-button-1-active);
-    border: 3px solid var(--border-button-1-active);
-    transition: none;
+  background-color: var(--background-button-1);
+  color: var(--border-button-1-active);
+  border: 3px solid var(--border-button-1-active);
+  transition: none;
 }
 
 .secondary:active {
-    background-color: var(--background-button-2);
-    color: var(--border-button-2-active);
-    border: 3px solid var(--border-button-2-active);
-    transition: none;
+  background-color: var(--background-button-2);
+  color: var(--border-button-2-active);
+  border: 3px solid var(--border-button-2-active);
+  transition: none;
 }
 
 .mobile:active {
-    color: var(--border-button-1-active);
-    border: 1px solid var(--border-button-1-active);
+  color: var(--border-button-1-active);
+  border: 1px solid var(--border-button-1-active);
 }
 
 /* ===== MEDIA QUERIES (MOBILE) ===== */
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    .container {
-        width: var(--container-width-sm);
-        min-height: 66vh;
-    }
+  .container {
+    width: var(--container-width-sm);
+    min-height: 66vh;
+  }
 
-    h1 {
-        font-size: 1.3rem;
-    }
+  h1 {
+    font-size: 1.3rem;
+  }
 
-    h4 {
-        font-size: 1.1rem;
-    }
+  h4 {
+    font-size: 1.1rem;
+  }
 
-    p {
-        font-size: 0.9rem;
-    }
+  p {
+    font-size: 0.9rem;
+  }
 
-    a {
-        font-size: 1.2rem;
-    }
+  a {
+    font-size: 1.2rem;
+  }
 }
 
 /* ===== MEDIA QUERIES (TABLET) ===== */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-    .container {
-        width: var(--container-width-md);
-        min-height: 66vh;
-    }
+  .container {
+    width: var(--container-width-md);
+    min-height: 66vh;
+  }
 
-    h1 {
-        font-size: 1.7rem;
-    }
+  h1 {
+    font-size: 1.7rem;
+  }
 
-    h4 {
-        font-size: 1.5rem;
-    }
+  h4 {
+    font-size: 1.5rem;
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  p {
+    font-size: 1rem;
+  }
 
-    a {
-        font-size: 1.4rem;
-    }
+  a {
+    font-size: 1.4rem;
+  }
 }
 
 /* ===== MEDIA QUERIES (LAPTOP) ===== */
 
 @media screen and (min-width: 769px) and (max-width: 1023px) {
-    .container {
-        width: var(--container-width-lg);
-        min-height: 66vh;
-    }
+  .container {
+    width: var(--container-width-lg);
+    min-height: 66vh;
+  }
 
-    h1 {
-        font-size: 2.3rem;
-    }
+  h1 {
+    font-size: 2.3rem;
+  }
 
-    h4 {
-        font-size: 2rem;
-    }
+  h4 {
+    font-size: 2rem;
+  }
 
-    p {
-        font-size: 1.2rem;
-    }
+  p {
+    font-size: 1.2rem;
+  }
 
-    a {
-        font-size: 1.6rem;
-    }
+  a {
+    font-size: 1.6rem;
+  }
 }

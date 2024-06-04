@@ -5,15 +5,15 @@ import Axios from "./caller.service";
  * @returns {Promise}
  */
 let getAllUsers = () => {
-    return Axios.get('/users');
-}
+  return Axios.get("/users");
+};
 
 /**
- * Récupératoin des amis de l'utilisateur connecté
+ * Récupération des amis de l'utilisateur connecté
  * @returns {Promise}
  */
 let getMyFriends = () => {
-    return Axios.get('/users/friends/scores');
+  return Axios.get("/users/followed/scores");
 };
 
 /**
@@ -22,7 +22,7 @@ let getMyFriends = () => {
  * @returns {Promise}
  */
 let updateName = (name) => {
-    return Axios.patch('/users/name', {name: name});
+  return Axios.patch("/users/name", { name: name });
 };
 
 /**
@@ -31,8 +31,8 @@ let updateName = (name) => {
  * @returns {Promise}
  */
 let updateRace = (race) => {
-    return Axios.patch('/users/race', {race: race})
-}
+  return Axios.patch("/users/race", { race: race });
+};
 
 /**
  * Récupération d'un utilisateur par son id
@@ -40,7 +40,7 @@ let updateRace = (race) => {
  * @returns {Promise}
  */
 let getUserById = (id) => {
-    return Axios.get(`/users/${id}`);
+  return Axios.get(`/users/${id}`);
 };
 
 /**
@@ -49,8 +49,8 @@ let getUserById = (id) => {
  * @returns {Promise}
  */
 let addToFriend = (id) => {
-    return Axios.patch(`/users/add/friend`, {friendId: id});
-}
+  return Axios.patch(`/users/add/followed`, { friendId: id });
+};
 
 /**
  * Suppression d'un utilisateur de la liste des amis
@@ -58,15 +58,15 @@ let addToFriend = (id) => {
  * @returns {Promise}
  */
 let deleteToFriend = (id) => {
-    return Axios.patch(`/users/delete/friend`, {friendId: id});
-}
+  return Axios.patch(`/users/delete/followed`, { friendId: id });
+};
 
 export const usersService = {
-    getAllUsers,
-    getMyFriends,
-    updateName,
-    updateRace,
-    getUserById,
-    addToFriend,
-    deleteToFriend,
-}
+  getAllUsers,
+  getMyFriends,
+  updateName,
+  updateRace,
+  getUserById,
+  addToFriend,
+  deleteToFriend,
+};
