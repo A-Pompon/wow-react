@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { USERS } from "../pages/User/users/_mock-users";
+// import { USERS } from "../pages/User/users/_mock-users";
 import { useNavigate } from "react-router-dom";
 import { gamesService, scoresService } from "../_services";
 
